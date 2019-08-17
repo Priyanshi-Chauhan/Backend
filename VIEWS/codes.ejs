@@ -1,0 +1,30 @@
+<html>
+    <head></head>
+    <body>
+        
+        <% for(var i = 0 ;i<4;i++){ %>
+        <h1><%=students[i] %></h1> 
+        <% } %>
+        <form method = "post">
+            <button type="submit">submit</button>
+        </form>   
+    </br>
+    <%=color %>
+<form method ="get">
+    <input type = "color" name="color">
+    <input type="submit">
+</form>
+
+<div style ="width:100%;height:300px;background:<%=color %>"></div>
+</br>
+<%=counter %>
+<form method="post">
+    <input type="hidden" name= "previous" value="<%=counter %>">
+    <button type="submit" name = "i" value ="i">increase</button>
+    <button type="submit" name = "j" value ="j">decrease</button>
+
+</form>
+
+
+    </body>
+</html>
