@@ -5,6 +5,6 @@ var parser = require("body-parser")
 var url =parser.urlencoded({extended:false})
 app.get('/',(req,res)=> { 
     let color = req.query.color || "red"
-    res.render("fbdd",{color:color})
+    res.render("color",{color:color})
 })
 app.listen(3009)
