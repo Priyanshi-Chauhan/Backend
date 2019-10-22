@@ -35,11 +35,11 @@ app.post('/', urlencodedParser, (req, res) => {
     switch (req.body.button) {
         
         case 'delete':
-            Task.deleteOne({ _id: req.body.id }, function (err) {
+            Task.deleteOne( { req.session.user._id: req.body.id }, function (err) {
                 if (err) {
                     console.log(err, 'error')
                     return
-                }
+                }   
                 res.redirect('/')
             });
             break
@@ -55,7 +55,7 @@ app.post('/', urlencodedParser, (req, res) => {
             });
             break
         case 'save':
-            Task.updateOne({ _id: req.body.id }, { title: req.body.title }, function (err, writeOpResult) {
+            Task.updateOne({ req.session.user._id: req.body.id }, { title: req.body.title }, function (err, writeOpResult) {
                 if (err) {
                     console.log(err, 'error')
                     return
